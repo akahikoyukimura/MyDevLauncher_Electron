@@ -1,0 +1,1022 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+
+  background:
+    radial-gradient(circle at 10% 0%, rgba(220, 38, 38, 0.1), transparent 30%),
+    radial-gradient(
+      circle at 90% 100%,
+      rgba(220, 38, 38, 0.08),
+      transparent 30%
+    ),
+    #08090b;
+
+  color: #f5f5f5;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0e10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #303238;
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #44464d;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+  width: 92%;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 40px 0 50px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+  display: flex;
+
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.logo {
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 31px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(145deg, #ef4444, #991b1b);
+
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.25);
+}
+
+.brand-text h1 {
+  margin: 0;
+
+  font-size: 31px;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+.brand-text h1 span {
+  color: #ef4444;
+}
+
+.brand-text p {
+  margin: 5px 0 0;
+
+  color: #777b85;
+
+  font-size: 14px;
+}
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.section-header h2 {
+  margin: 0 0 5px;
+
+  font-size: 20px;
+
+  font-weight: 600;
+}
+
+.section-header span {
+  color: #737780;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   PROJECT HEADER BUTTONS
+========================================= */
+
+.projects-button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+/* =========================================
+   PROJECT COUNT
+========================================= */
+
+.project-count {
+  padding: 8px 12px;
+
+  border: 1px solid #292c31;
+
+  border-radius: 5px;
+
+  background: #111317;
+
+  color: #9296a0;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   GENERAL BUTTON
+========================================= */
+
+button {
+  border: none;
+
+  outline: none;
+
+  border-radius: 5px;
+
+  padding: 9px 16px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* =========================================
+   ADD PROJECT BUTTON
+========================================= */
+
+.add {
+  display: flex;
+
+  align-items: center;
+  padding-left: 10px;
+  gap: 6px;
+
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+
+  color: white;
+
+  box-shadow: 0 5px 18px rgba(220, 38, 38, 0.2);
+}
+
+.add span {
+  font-size: 17px;
+  color: white;
+  line-height: 1;
+}
+
+.add:hover {
+  background: linear-gradient(135deg, #f05252, #ef3333);
+
+  box-shadow: 0 7px 22px rgba(220, 38, 38, 0.3);
+}
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.project {
+  position: relative;
+
+  background: linear-gradient(
+    145deg,
+    rgba(24, 26, 30, 0.97),
+    rgba(13, 14, 17, 0.98)
+  );
+
+  border: 1px solid #282b30;
+
+
+  padding: 22px 24px;
+
+  margin-bottom: 12px;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Red line */
+
+.project::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 4px;
+
+  height: 100%;
+
+  background: #ef3340;
+}
+
+/* Hover */
+
+.project:hover {
+  transform: translateY(-2px);
+
+  border-color: #3b3e45;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================
+   PROJECT INFORMATION
+========================================= */
+
+.project-info {
+  width: 100%;
+}
+
+.project-name {
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: #f3f4f6;
+
+  margin-bottom: 7px;
+}
+
+.project-path {
+  font-size: 12px;
+
+  color: #777c86;
+
+  font-family: Consolas, "Cascadia Code", monospace;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  max-width: 100%;
+}
+
+/* =========================================
+   DELETE ICON
+========================================= */
+.delete {
+  color: #706a6a;
+  font-size: x-large;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+.delete:hover {
+  color: #f05252;
+  cursor: pointer;
+}
+/* =========================================
+   PROJECT CONTROLS
+========================================= */
+
+.project-controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+/* =========================================
+   RUN BUTTON
+========================================= */
+
+.run {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+
+  color: white;
+
+  box-shadow: 0 5px 18px rgba(220, 38, 38, 0.2);
+}
+
+.run:hover {
+  background: linear-gradient(135deg, #f05252, #ef3333);
+
+  box-shadow: 0 7px 22px rgba(220, 38, 38, 0.3);
+}
+
+/* =========================================
+   STOP BUTTON
+========================================= */
+
+.stop {
+  background: #17191d;
+
+  color: #b8bbc2;
+
+  border: 1px solid #34373d;
+}
+
+.stop:hover {
+  background: #24262b;
+
+  border-color: #4a4d54;
+
+  color: #ffffff;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-left: 7px;
+
+  padding: 8px 11px;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  background: #15171a;
+
+  border: 1px solid #292c31;
+}
+
+/* =========================================
+   STATUS DOT
+========================================= */
+
+.status::before {
+  content: "";
+
+  width: 7px;
+
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #6b7078;
+}
+
+/* =========================================
+   RUNNING
+========================================= */
+
+.running {
+  color: #4ade80;
+
+  border-color: rgba(34, 197, 94, 0.2);
+
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.running::before {
+  background: #22c55e;
+
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.75);
+}
+
+/* =========================================
+   STOPPED
+========================================= */
+
+.stopped {
+  color: #858992;
+}
+
+.stopped::before {
+  background: #6b7078;
+}
+
+/* =========================================
+   ADD PROJECT MODAL
+========================================= */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+}
+
+/* Visible modal */
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+  width: 100%;
+  height: 100%;
+  overflow: overlay;
+
+  max-width: 500px;
+
+  background: linear-gradient(145deg, #181a1e, #0f1013);
+
+  border: 1px solid #30333a;
+
+  border-radius: 10px;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+
+  animation: modal-in 0.18s ease-out;
+}
+.delete-modal {
+  width: 100%;
+  height: 40%;
+  overflow: overlay;
+
+  max-width: 500px;
+
+  background: linear-gradient(145deg, #181a1e, #0f1013);
+
+  border: 1px solid #30333a;
+
+  border-radius: 10px;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+
+  animation: modal-in 0.18s ease-out;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.modal-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid #282b30;
+}
+
+.modal-header h2 {
+  margin: 0 0 5px;
+
+  font-size: 20px;
+
+  color: #f3f4f6;
+}
+
+.modal-header p {
+  margin: 0;
+
+  color: #777c86;
+
+  font-size: 12px;
+}
+
+.modal-delete-text {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  padding: 22px 24px;
+}
+.modal-delete-text p {
+  margin: 0;
+
+  color: #777c86;
+
+  font-size: 12px;
+}
+
+.delete-button {
+  display: flex;
+  justify-self: end;
+  margin-right: 30px;
+  color: white;
+  background-color: transparent;
+  border: #3b3b3b solid 1px;
+  width: 15%;
+  justify-content: center;
+}
+.delete-button:hover {
+  background-color: rgb(91, 91, 91);
+}
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  color: #858992;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.close-modal:hover {
+  color: white;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+#add-project-form {
+  padding: 22px 24px 24px;
+}
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+  margin-bottom: 17px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #d8dbe1;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.form-group small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #62666f;
+
+  font-size: 10px;
+}
+
+/* =========================================
+   INPUT
+========================================= */
+
+.form-group input {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 12px;
+
+  background: #0b0c0f;
+
+  color: #e5e7eb;
+
+  border: 1px solid #30333a;
+
+  border-radius: 6px;
+
+  outline: none;
+
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #555a63;
+}
+
+.form-group input:focus {
+  border-color: #ef4444;
+
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.08);
+}
+
+/* =========================================
+   PATH INPUT
+========================================= */
+
+.path-input {
+  display: flex;
+
+  gap: 8px;
+}
+
+.path-input input {
+  flex: 1;
+
+  min-width: 0;
+}
+
+/* =========================================
+   BROWSE BUTTON
+========================================= */
+
+.browse-button {
+  flex-shrink: 0;
+
+  height: 40px;
+
+  padding: 0 13px;
+
+  background: #17191d;
+
+  color: #b8bbc2;
+
+  border: 1px solid #34373d;
+
+  font-size: 12px;
+}
+
+.browse-button:hover {
+  background: #24262b;
+
+  color: white;
+
+  border-color: #4a4d54;
+}
+
+/* =========================================
+   FORM ERROR
+========================================= */
+
+.form-error {
+  display: none;
+
+  padding: 9px 11px;
+
+  margin-bottom: 15px;
+
+  border-radius: 6px;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+
+  color: #f87171;
+
+  font-size: 11px;
+}
+
+.form-error.visible {
+  display: block;
+}
+
+/* =========================================
+   MODAL FOOTER
+========================================= */
+
+.modal-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  padding-top: 5px;
+}
+
+/* Cancel */
+
+.cancel-button {
+  background: #17191d;
+
+  color: #aeb2bb;
+
+  border: 1px solid #30333a;
+}
+
+.cancel-button:hover {
+  background: #24262b;
+
+  color: white;
+}
+
+/* Add */
+
+.add-button {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+
+  color: white;
+
+  box-shadow: 0 5px 18px rgba(220, 38, 38, 0.18);
+}
+
+.add-button:hover {
+  background: linear-gradient(135deg, #f05252, #ef3333);
+
+  box-shadow: 0 7px 22px rgba(220, 38, 38, 0.28);
+}
+
+/* =========================================
+   TERMINAL
+========================================= */
+
+.terminal {
+  margin-top: 30px;
+
+  background: #0b0c0f;
+
+  border: 1px solid #282b30;
+
+  border-radius: 5px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   TERMINAL HEADER
+========================================= */
+
+.terminal-header {
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 15px 0 18px;
+
+  background: #111317;
+
+  border-bottom: 1px solid #25282d;
+}
+
+.terminal-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #d8dbe1;
+}
+
+.terminal-icon {
+  color: #ef4444;
+
+  font-family: Consolas, monospace;
+
+  font-weight: bold;
+
+  font-size: 15px;
+}
+
+/* =========================================
+   CLEAR BUTTON
+========================================= */
+
+#clear {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  background: #17191d;
+
+  color: #aeb2bb;
+
+  border: 1px solid #30333a;
+
+  padding: 7px 12px;
+
+  font-size: 12px;
+}
+
+#clear:hover {
+  color: white;
+
+  border-color: #ef4444;
+
+  background: #211316;
+}
+
+#clear span {
+  font-size: 11px;
+}
+
+/* =========================================
+   TERMINAL BODY
+========================================= */
+
+.terminal-body {
+  padding: 5px;
+}
+
+#output {
+  height: 250px;
+
+  overflow-y: auto;
+
+  padding: 16px;
+
+  margin: 0;
+
+  color: #bfc3ca;
+
+  background: #090a0c;
+
+  font-family: "Cascadia Code", Consolas, monospace;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  white-space: pre-wrap;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .container {
+    width: 94%;
+
+    padding-top: 25px;
+  }
+
+  .brand-text h1 {
+    font-size: 25px;
+  }
+
+  .logo {
+    width: 50px;
+
+    height: 50px;
+
+    font-size: 27px;
+  }
+
+  .project {
+    padding: 20px;
+  }
+
+  .project-controls {
+    flex-wrap: wrap;
+  }
+
+  .status {
+    margin-left: 0;
+  }
+
+  .section-header {
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .projects-button {
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+  }
+
+  .modal {
+    max-height: 90vh;
+
+    overflow-y: auto;
+  }
+}

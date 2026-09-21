@@ -1,0 +1,16 @@
+[
+  {
+    "id": "screenshot-extension",
+    "name": "ScreenShot Document [Extension]",
+    "path": "C:\\Users\\hp\\Desktop\\FK\\K.Project\\extension\\screenshot-documenter\\backend",
+    "command": "npm",
+    "args": ["run", "start:dev"]
+  },
+  {
+    "id": "trigger-nestjs-application",
+    "name": "Trigger gun E-Commerce [Web app]",
+    "path": "C:\\Users\\hp\\Desktop\\FK\\K.Project\\war\\war\\React_E-Commerce",
+    "command": "npm",
+    "args": ["run", "dev"]
+  }
+]

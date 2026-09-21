@@ -1,0 +1,33 @@
+{
+  "name": "my-dev-launcher",
+  "version": "1.0.0",
+  "description": "Local development project launcher",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc && copyfiles -u 1 src/projects.json dist",
+    "start": "npm run build && electron .",
+    "clean": "taskkill /F /IM \"My Dev Launcher.exe\" 2>nul & rmdir /S /Q release 2>nul",
+    "dist": "npm run clean && npm run build && electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^44.4.2",
+    "@types/node": "^26.6.1",
+    "copyfiles": "^2.4.1",
+    "electron-builder": "^26.15.3",
+    "typescript": "^7.0.2"
+  },
+  "build": {
+    "appId": "com.mydevlauncher.app",
+    "productName": "My Dev Launcher",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "renderer/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Dev Launcher</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="logo">
+                    😈
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>
+                        My Dev <span>Launcher</span>
+                    </h1>
+
+                    <p>
+                        Run your projects. Faster.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <main>
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Projects
+                    </h2>
+
+                    <span>
+                        Select a project to start
+                    </span>
+
+                </div>
+
+
+                <div class="projects-button">
+                    <!-- Add project -->
+
+                    <button id="add-project" class="add">
+                        <span>+</span>
+                        Project
+                    </button>
+                    <!-- Project count -->
+
+                    <div class="project-count" id="project-count">
+                        0 Projects
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Project list -->
+
+            <div id="projects"></div>
+
+
+            <!-- ================= ADD PROJECT MODAL ================= -->
+
+            <div id="project-modal" class="modal-overlay">
+
+                <div class="modal">
+
+                    <!-- Modal header -->
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <h2>
+                                Add Project
+                            </h2>
+
+                            <p>
+                                Add a project to your launcher
+                            </p>
+
+                        </div>
+
+
+                        <button type="button" id="close-modal" class="close-modal">
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <!-- Form -->
+
+                    <form id="add-project-form">
+
+
+                        <!-- Project ID -->
+
+                        <div class="form-group">
+
+                            <label for="project-id">
+                                Project ID
+                            </label>
+
+                            <input id="project-id" type="text" value="test" placeholder="screenshot-extension" required>
+
+                            <small>
+                                Must be unique.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Project name -->
+
+                        <div class="form-group">
+
+                            <label for="project-name">
+                                Project Name
+                            </label>
+
+                            <input id="project-name" type="text" value="test"
+                                placeholder="ScreenShot Document [Extension]" required>
+
+                        </div>
+
+
+                        <!-- Project path -->
+
+                        <div class="form-group">
+
+                            <label for="project-path">
+                                Project Path
+                            </label>
+
+
+                            <div class="path-input">
+
+                                <input id="project-path" type="text" value="C:\Users\hp\Downloads"
+                                    placeholder="C:\Users\hp\my-project" required>
+
+
+                                <button type="button" id="browse-project" class="browse-button">
+                                    Browse
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Command -->
+
+                        <div class="form-group">
+
+                            <label for="project-command">
+                                Command
+                            </label>
+
+                            <input id="project-command" type="text" value="npm" placeholder="npm" required>
+
+                        </div>
+
+
+                        <!-- Arguments -->
+
+                        <div class="form-group">
+
+                            <label for="project-args">
+                                Arguments
+                            </label>
+
+                            <input id="project-args" type="text" value="test" placeholder="run start:dev">
+
+                            <small>
+                                Example: run start:dev
+                            </small>
+
+                        </div>
+
+
+                        <!-- Error -->
+
+                        <div id="form-error" class="form-error"></div>
+
+
+                        <!-- Footer -->
+
+                        <div class="modal-footer">
+
+                            <button type="button" id="cancel-project" class="cancel-button">
+                                Cancel
+                            </button>
+
+
+                            <button type="submit" class="add-button">
+                                Add Project
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- ================= DELETE PROJECT MODAL ================= -->
+
+            <div id="delete-modal" class="modal-overlay">
+
+                <div class="delete-modal">
+
+                    <!-- Modal header -->
+
+                    <div class="modal-header">
+
+                        <h2>
+                            Delete Project ⛔
+                        </h2>
+
+
+                        <button type="button" id="close-delete-modal" class="close-modal">
+                            ×
+                        </button>
+
+                    </div>
+
+                    <div class="modal-delete-text">
+
+
+                        <p>
+                            You are about to delete <strong><span id="object-to-delete"></span></strong> project. Please
+                            click Ok to confirm delete.
+                        </p>
+
+                    </div>
+                    <!-- Ok -->
+                    <button type="submit" class="delete-button" id="confirm-delete-project">
+                        Ok
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- ================= TERMINAL ================= -->
+
+            <section class="terminal">
+
+                <div class="terminal-header">
+
+                    <div class="terminal-title">
+
+                        <span class="terminal-icon">
+                            &gt;_
+                        </span>
+
+                        <span>
+                            Output
+                        </span>
+
+                    </div>
+
+
+                    <button id="clear" onclick="clearOutput()">
+
+                        <span>
+                            🗑
+                        </span>
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+
+                <div class="terminal-body">
+
+                    <pre id="output"></pre>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="renderer.js"></script>
+
+</body>
+
+</html>
