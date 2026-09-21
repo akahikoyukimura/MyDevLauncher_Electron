@@ -1,0 +1,9 @@
+[
+  {
+    "id": "screenshot-extension",
+    "name": "ScreenShot Document [Extension]",
+    "path": "C:\\test\\test",
+    "command": "npm",
+    "args": ["run", "start:dev"]
+  }
+]
