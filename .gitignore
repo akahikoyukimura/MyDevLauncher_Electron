@@ -24,3 +24,5 @@ yarn-error.log*
 
 #data json 
 src/*.json
+release
+dist
